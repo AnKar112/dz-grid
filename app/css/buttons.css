@@ -1,0 +1,165 @@
+:root {
+  --primary-color: rgb(98, 98, 255);
+  --primary-color-smooth: rgba(98, 98, 255, .5);
+  --warning-color: rgb(255, 108, 98);
+  --warning-color-smooth: rgba(255, 108, 98, .5);
+  --positive-color: rgb(125, 255, 86);
+  --positive-color-smooth: rgba(125, 255, 86, .5);
+  --dodong-color: rgb(255, 206, 142);
+  --dodong-color-smooth: rgba(255, 206, 142, .5);
+  --black-color: #000;
+  --font-size: 14px;
+  --border-radius: 4px;
+  --text-color: #fff;
+  --only-icon-size: 36px; }
+
+.buttons {
+  margin: 50px; }
+  .buttons .block {
+    margin-bottom: 50px; }
+    .buttons .block .btn {
+      margin: 0 20px; }
+  .buttons .title {
+    font-weight: 24px;
+    margin-bottom: 20px;
+    font-weight: bold; }
+  .buttons .btn {
+    outline: unset;
+    box-shadow: unset;
+    border: unset;
+    background: unset;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    color: var(--text-color); }
+    .buttons .btn.font-small {
+      font-size: .5em; }
+    .buttons .btn.font-medium {
+      font-size: 1em; }
+    .buttons .btn.font-big {
+      font-size: 1.5em; }
+    .buttons .btn.uppercase {
+      text-transform: uppercase; }
+    .buttons .btn.size-small {
+      padding: 5px 10px; }
+      .buttons .btn.size-small.only-icon {
+        width: var(--only-icon-size);
+        height: var(--only-icon-size); }
+    .buttons .btn.size-medium {
+      padding: 10px 20px; }
+      .buttons .btn.size-medium.only-icon {
+        width: calc(var(--only-icon-size) * 1.5);
+        height: calc(var(--only-icon-size) * 1.5); }
+    .buttons .btn.size-big {
+      padding: 20px 30px;
+      width: calc(var(--only-icon-size) * 2);
+      height: calc(var(--only-icon-size) * 2); }
+    .buttons .btn.color-primary, .buttons .btn .color-primary {
+      background: var(--primary-color); }
+      .buttons .btn.color-primary.smooth, .buttons .btn .color-primary.smooth {
+        color: var(--primary-color);
+        background: var(--primary-color-smooth); }
+      .buttons .btn.color-primary.ghost, .buttons .btn .color-primary.ghost {
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color); }
+      .buttons .btn.color-primary.raised, .buttons .btn .color-primary.raised {
+        color: var(--primary-color); }
+    .buttons .btn.color-warning, .buttons .btn .color-warning {
+      background: var(--warning-color); }
+      .buttons .btn.color-warning.smooth, .buttons .btn .color-warning.smooth {
+        color: var(--warning-color);
+        background: var(--warning-color-smooth); }
+      .buttons .btn.color-warning.ghost, .buttons .btn .color-warning.ghost {
+        color: var(--warning-color);
+        border: 1px solid var(--warning-color); }
+      .buttons .btn.color-warning.raised, .buttons .btn .color-warning.raised {
+        color: var(--warning-color); }
+    .buttons .btn.color-positive, .buttons .btn .color-positive {
+      background: var(--positive-color); }
+      .buttons .btn.color-positive.smooth, .buttons .btn .color-positive.smooth {
+        color: var(--positive-color);
+        background: var(--positive-color-smooth); }
+      .buttons .btn.color-positive.ghost, .buttons .btn .color-positive.ghost {
+        color: var(--positive-color);
+        border: 1px solid var(--positive-color); }
+      .buttons .btn.color-positive.raised, .buttons .btn .color-positive.raised {
+        color: var(--positive-color); }
+    .buttons .btn.color-dodong, .buttons .btn .color-dodong {
+      background: var(--dodong-color); }
+      .buttons .btn.color-dodong.smooth, .buttons .btn .color-dodong.smooth {
+        color: var(--dodong-color);
+        background: var(--dodong-color-smooth); }
+      .buttons .btn.color-dodong.ghost, .buttons .btn .color-dodong.ghost {
+        color: var(--dodong-color);
+        border: 1px solid var(--dodong-color); }
+      .buttons .btn.color-dodong.raised, .buttons .btn .color-dodong.raised {
+        color: var(--dodong-color); }
+    .buttons .btn.ghost {
+      background: transparent; }
+    .buttons .btn.raised {
+      background: #fff;
+      box-shadow: 1px 1px 3px 1px #777777; }
+    .buttons .btn.rounded {
+      border-radius: 50px; }
+    .buttons .btn .counter {
+      position: absolute;
+      font-size: .6em;
+      font-weight: 400;
+      padding: 3px;
+      border-radius: 50px;
+      top: -2px;
+      right: -2px; }
+    .buttons .btn.back-arrow-icon-left::before {
+      font-family: 'FontAwesome';
+      content: '\f060';
+      padding-right: 10px; }
+    .buttons .btn.back-arrow-icon-right::after {
+      font-family: 'FontAwesome';
+      content: '\f060';
+      padding-left: 10px; }
+    .buttons .btn.info-icon-left::before {
+      font-family: 'FontAwesome';
+      content: '\f05a';
+      padding-right: 10px; }
+    .buttons .btn.info-icon-right::after {
+      font-family: 'FontAwesome';
+      content: '\f05a';
+      padding-left: 10px; }
+    .buttons .btn.check-icon-left::before {
+      font-family: 'FontAwesome';
+      content: '\f00c';
+      padding-right: 10px; }
+    .buttons .btn.check-icon-right::after {
+      font-family: 'FontAwesome';
+      content: '\f00c';
+      padding-left: 10px; }
+    .buttons .btn.bell-icon-left::before {
+      font-family: 'FontAwesome';
+      content: '\f0f3';
+      padding-right: 10px; }
+    .buttons .btn.bell-icon-right::after {
+      font-family: 'FontAwesome';
+      content: '\f0f3';
+      padding-left: 10px; }
+    .buttons .btn.plus-icon-left::before {
+      font-family: 'FontAwesome';
+      content: '\f067';
+      padding-right: 10px; }
+    .buttons .btn.plus-icon-right::after {
+      font-family: 'FontAwesome';
+      content: '\f067';
+      padding-left: 10px; }
+    .buttons .btn.plus-icon::before {
+      font-family: 'FontAwesome';
+      content: '\f067'; }
+    .buttons .btn.bell-icon::before {
+      font-family: 'FontAwesome';
+      content: '\f0f3'; }
+    .buttons .btn.icon-black::before, .buttons .btn.icon-black::after {
+      color: var(--black-color); }
+    .buttons .btn.icon-dodong::before, .buttons .btn.icon-dodong::after {
+      color: var(--dodong-color); }
+    .buttons .btn.icon-primary::before, .buttons .btn.icon-primary::after {
+      color: var(--primary-color); }

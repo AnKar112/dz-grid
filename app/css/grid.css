@@ -1,0 +1,109 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+/* ol, ul {
+	list-style: none;
+} */
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: sans-serif;
+  line-height: 1; }
+
+img {
+  max-width: 100%; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  background: #010101; }
+
+.grid {
+  display: grid;
+  grid-template: repeat(1, 1fr)/repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px; }
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template: repeat(1, 1fr)/repeat(3, 1fr); } }
+  @media (max-width: 768px) {
+    .grid {
+      grid-template: repeat(1, 1fr)/repeat(2, 1fr);
+      grid-gap: 10px; } }
+
+.grid img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px; }
+  .grid img:nth-child(9n-4), .grid img:nth-child(9n-2), .grid img:nth-child(9n) {
+    grid-column: span 2; }
+  .grid img:nth-child(9n-6), .grid img:nth-child(9n-3), .grid img:nth-child(9n-2) {
+    grid-row: span 2;
+    height: 620px; }
+  @media (max-width: 1024px) {
+    .grid img:nth-child(1n) {
+      grid-column: span 1;
+      grid-row: span 1;
+      height: 300px; }
+    .grid img:nth-child(9n-8) {
+      grid-column: span 2; }
+    .grid img:nth-child(9n-5), .grid img:nth-child(9n-3) {
+      grid-row: span 2;
+      height: 610px; } }
+  @media (max-width: 768px) {
+    .grid img {
+      height: 200px; }
+      .grid img:nth-child(1n) {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 200px; }
+      .grid img:nth-child(9n-6), .grid img:nth-child(9n-4), .grid img:nth-child(9n-1) {
+        grid-row: span 2;
+        height: 410px; } }
+  @media (max-width: 480px) {
+    .grid img:nth-child(1n) {
+      grid-column: span 1;
+      grid-row: span 1;
+      height: 150px; } }

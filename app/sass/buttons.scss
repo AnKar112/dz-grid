@@ -1,0 +1,226 @@
+:root {
+    --primary-color: rgb(98, 98, 255);
+    --primary-color-smooth: rgba(98, 98, 255, .5);
+    --warning-color: rgb(255, 108, 98);
+    --warning-color-smooth: rgba(255, 108, 98, .5);
+    --positive-color: rgb(125, 255, 86);
+    --positive-color-smooth: rgba(125, 255, 86, .5);
+    --dodong-color: rgb(255, 206, 142);
+    --dodong-color-smooth: rgba(255, 206, 142, .5);
+    --black-color: #000;
+
+
+    --font-size: 14px;
+
+    --border-radius: 4px;
+    --text-color: #fff;
+
+    --only-icon-size: 36px;
+}
+
+.buttons {
+    margin: 50px;
+    .block {
+        margin-bottom: 50px;
+        .btn {
+            margin: 0 20px;
+        }
+    }
+    .title {
+        font-weight: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .btn {
+        outline: unset;
+        box-shadow: unset;
+        border: unset;
+        background: unset;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        border-radius: var(--border-radius);
+        font-size: var(--font-size);
+        color: var(--text-color);
+        // FONT SIZE 
+        &.font-small {
+            font-size: .5em;
+        }
+        &.font-medium {
+            font-size: 1em;
+        }
+        &.font-big {
+            font-size: 1.5em;
+        }
+        &.uppercase {
+            text-transform: uppercase;
+        }
+        // BUTTON SIZE 
+        &.size-small {
+            padding: 5px 10px;
+            &.only-icon {
+                width: var(--only-icon-size);
+                height: var(--only-icon-size);
+            }
+        }
+        &.size-medium {
+            padding: 10px 20px;
+            &.only-icon {
+                width: calc(var(--only-icon-size) * 1.5);
+                height: calc(var(--only-icon-size) * 1.5);
+            }
+        }
+        &.size-big {
+            padding: 20px 30px;
+            width: calc(var(--only-icon-size) * 2);
+            height: calc(var(--only-icon-size) * 2);
+        }
+        // COLORS 
+        &.color-primary, .color-primary {
+            background: var(--primary-color);
+            &.smooth {
+                color: var(--primary-color);
+                background: var(--primary-color-smooth);
+            }
+            &.ghost {
+                color: var(--primary-color);
+                border: 1px solid var(--primary-color);
+            }
+            &.raised {
+                color: var(--primary-color);
+            }
+        }
+        &.color-warning, .color-warning {
+            background: var(--warning-color);
+            &.smooth {
+                color: var(--warning-color);
+                background: var(--warning-color-smooth);
+            }
+            &.ghost {
+                color: var(--warning-color);
+                border: 1px solid var(--warning-color);
+            }
+            &.raised {
+                color: var(--warning-color);
+            }
+        }
+        &.color-positive, .color-positive {
+            background: var(--positive-color);
+            &.smooth {
+                color: var(--positive-color);
+                background: var(--positive-color-smooth);
+            }
+            &.ghost {
+                color: var(--positive-color);
+                border: 1px solid var(--positive-color);
+            }
+            &.raised {
+                color: var(--positive-color);
+            }
+        }
+        &.color-dodong, .color-dodong {
+            background: var(--dodong-color);
+            &.smooth {
+                color: var(--dodong-color);
+                background: var(--dodong-color-smooth);
+            }
+            &.ghost {
+                color: var(--dodong-color);
+                border: 1px solid var(--dodong-color);
+            }
+            &.raised {
+                color: var(--dodong-color);
+            }
+        }
+        &.ghost {
+            background: transparent;
+        }
+        &.raised {
+            background: #fff;
+            box-shadow: 1px 1px 3px 1px #777777;
+        }
+        // ROUNDED
+        &.rounded {
+            border-radius: 50px;
+        }
+        // COUNTER 
+        .counter {
+            position: absolute;
+            font-size: .6em;
+            font-weight: 400;
+            padding: 3px;
+            border-radius: 50px;
+            top: -2px;
+            right: -2px;
+        }
+
+        // ICONS
+        &.back-arrow-icon-left::before {
+            font-family: 'FontAwesome';
+            content: '\f060';
+            padding-right: 10px;
+        }
+        &.back-arrow-icon-right::after {
+            font-family: 'FontAwesome';
+            content: '\f060';
+            padding-left: 10px;
+        }
+        &.info-icon-left::before {
+            font-family: 'FontAwesome';
+            content: '\f05a';
+            padding-right: 10px;
+        }
+        &.info-icon-right::after {
+            font-family: 'FontAwesome';
+            content: '\f05a';
+            padding-left: 10px;
+        }
+        &.check-icon-left::before {
+            font-family: 'FontAwesome';
+            content: '\f00c';
+            padding-right: 10px;
+        }
+        &.check-icon-right::after {
+            font-family: 'FontAwesome';
+            content: '\f00c';
+            padding-left: 10px;
+        }
+        &.bell-icon-left::before {
+            font-family: 'FontAwesome';
+            content: '\f0f3';
+            padding-right: 10px;
+        }
+        &.bell-icon-right::after {
+            font-family: 'FontAwesome';
+            content: '\f0f3';
+            padding-left: 10px;
+        }
+        &.plus-icon-left::before {
+            font-family: 'FontAwesome';
+            content: '\f067';
+            padding-right: 10px;
+        }
+        &.plus-icon-right::after {
+            font-family: 'FontAwesome';
+            content: '\f067';
+            padding-left: 10px;
+        }
+        &.plus-icon::before {
+            font-family: 'FontAwesome';
+            content: '\f067';
+        }
+        &.bell-icon::before {
+            font-family: 'FontAwesome';
+            content: '\f0f3';
+        }
+        &.icon-black::before, &.icon-black::after {
+            color: var(--black-color);
+        }
+        &.icon-dodong::before, &.icon-dodong::after {
+            color: var(--dodong-color);
+        }
+        &.icon-primary::before, &.icon-primary::after {
+            color: var(--primary-color);
+        }
+    }
+}
