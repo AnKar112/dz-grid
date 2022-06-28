@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/game.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="title-wrap">
+                <h1 class="title">Симулятор галери</h1>
+                <img class="info-icon" src="./img/svg/icon_info.svg" alt="info">
+                <div class="total-info-block">
+                    <p class="desc">Авторитет компанії: <span>"а це хто?"</span></p>
+                    <p class="moneyPerContract desc">Гривень за заказ: <span>0</span></p>
+                    <p class="moneyPerSec desc">Гривень на секунду: <span>0</span></p>
+                    <p class="junior desc">Джунів у команді: <span>0</span></p>
+                    <p class="designer desc">Дизайнерів у команді: <span>0</span></p>
+                    <p class="middle desc">Мідлів у команді: <span>0</span></p>
+                    <p class="senior desc">Сеньорів у команді: <span>0</span></p>
+                    <p class="fullstack desc">Фулстаків у команді: <span>0</span></p>
+                </div>
+            </div>
+            <div class="totalEarnedMoney">Усього зароблено грошей: <span>0</span> гривень</div>
+            <div class="currentMoney">Грошей на кармані: <span>60</span> гривень</div>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="button">
+                <img class="upwork-logo" alt="upwork logo" src="./img/svg/icon_upwork.svg">
+                <p class="desc">Взяти заказ<br>(+ <span>0</span> грн.)</p>
+            </div>
+            <div class="employers">
+                <div class="title-block">
+                    <h2 class="title">Команда</h2>
+                    <img class="info-icon" src="./img/svg/icon_info.svg" alt="info">
+                    <div class="info-block">
+                        Команда це дуже важливо, але пам'ятайте, що в усьому повинен бути баланс та логіка. Компанія з купи джунів далеко не піде. 
+                    </div>
+                </div>
+                <div class="powerup">
+                    <div class="card" data-powerup="junior" onclick="junior.buyPowerUp()">
+                        <p class="desc">Найняти джуна - <span>60</span> грн.</p>
+                        <p class="powerup-desc-perContract">+ <span>1</span> грн. за заказ</p>
+                        <p class="amount">Джунів у команді: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="designer" onclick="designer.buyPowerUp()">
+                        <p class="desc">Найняти дізайнера - <span>300</span> грн.</p>
+                        <p class="powerup-desc-perContract">+ <span>2</span> грн. за заказ</p>
+                        <p class="powerup-desc-perSec">+ <span>1</span> грн. на секунду</p>
+                        <p class="amount">Дизайнерів у команді: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="middle" onclick="middle.buyPowerUp()">
+                        <p class="desc">Найняти мідла - <span>600</span> грн.</p>
+                        <p class="powerup-desc-perContract">+ <span>3</span> грн. за заказ</p>
+                        <p class="powerup-desc-perSec">+ <span>2</span> грн. на секунду</p>
+                        <p class="amount">Мідлів у команді: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="senior" onclick="senior.buyPowerUp()">
+                        <p class="desc">Найняти сеньора - <span>2000</span> грн.</p>
+                        <p class="powerup-desc-perContract">+ <span>7</span> грн. за заказ</p>
+                        <p class="powerup-desc-perSec">+ <span>4</span> грн. на секунду</p>
+                        <p class="amount">Сеньорів у команді: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="fullstack" onclick="fullstack.buyPowerUp()">
+                        <p class="desc">Найняти фулстака - <span>5000</span> грн.</p>
+                        <p class="powerup-desc-perContract">+ <span>15</span> грн. за заказ</p>
+                        <p class="powerup-desc-perSec">+ <span>6</span> грн. на секунду</p>
+                        <p class="amount">Фулстаків у команді: <span>0</span></p>
+                    </div>
+                    <div class="welcome-popup welcome disable">
+                        <img src="./img/svg/curved-arrow.svg">
+                        <p>Почни бізнес зі свого першого джуна!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stuff">
+                <div class="title-block">
+                    <h2 class="title">Бонуси</h2>
+                    <img class="info-icon" src="./img/svg/icon_info.svg" alt="info">
+                    <div class="info-block">
+                        Бонуси можуть значно посилити вашу команду. А також нададуть їм купу можливостей уникати роботи. Не дозволяється мати більше одного бонусу кожного типу, бо це порушить баланс у всесвиті. 
+                    </div>
+                </div>
+                <div class="powerup">
+                    <div class="card" data-powerup="udemy" onclick="udemy.buyBonus()">
+                        <p class="desc">Курс на udemy - <span>1000</span> грн.</p>
+                        <p class="powerup-desc">Придбайте для своїх джунів курс на юдемі, і вони почнут приносити <span>вдвічі більше</span> грошей за заказ</p>
+                        <p class="amount">Курсів: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="cofe" onclick="cofe.buyBonus()">
+                        <p class="desc">Кавомашина - <span>5000</span> грн.</p>
+                        <p class="powerup-desc">Заряд кави робить ваших працівників значно активніше, і вони заробляють <span>вдвічі більше</span> грошей на секунду.</span></p>
+                        <p class="amount">Кавомашин: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="relax" onclick="relax.buyBonus()">
+                        <p class="desc">Зона відпочинку - <span>5000</span> грн.</p>
+                        <p class="powerup-desc">Двадцять хвилин за грою у playstation повернуть вашим працівникам сили, від чого вони будуть приносити <span>вдвічі більше</span> грошей за заказ</p>
+                        <p class="amount">Зон відпочинку: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="shawerma" onclick="shawerma.buyBonus()">
+                        <p class="desc">Ларьок з шаурмою - <span>10000</span> грн.</p>
+                        <p class="powerup-desc">Поставити на кухні безкоштовний ларьок з шаурмою - кожен про це жартував, але зможете зробити тільки ви. <span>Вдвічі знижує</span> вартість найму працівників, бо вони готові працювати буквально за їжу.</p>
+                        <p class="amount">Ларьків: <span>0</span></p>
+                    </div>
+                    <div class="card" data-powerup="relocate" onclick="relocate.buyBonus()">
+                        <p class="desc">Релокейт у столицю - <span>30000</span> грн.</p>
+                        <p class="powerup-desc">Перевезти увесь офіс до столиці. Ефект: <span>???</span></p>
+                        <p class="amount">Спроб переїхати: <span>0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="overlay welcome disable"></div>
+    <div class="overlay message-popup disable">
+        <div class="capital message">
+            <h3>Релокейт до столиці</h3>
+            <p>Нажаль, купа грошей, яка пошла на релокейт, не дала жодного результату. Зато ви тепер у Києві!</p>
+            <div class="close">Ну ось :(</div>
+        </div>
+        <div class="lvl2 message">
+            <h3>Рівень компанії зріс!</h3>
+            <p>Ви заробили свої перші 20 000 гривень! Є чим пишатися!</p>
+            <div class="close">Найс</div>
+        </div>
+        <div class="lvl3 message">
+            <h3>Рівень компанії зріс!</h3>
+            <p>Ви заробили 50 000 гривень! Є чим пишатися!</p>
+            <div class="close">Найс</div>
+        </div>
+        <div class="lvl4 message">
+            <h3>Максимальний рівень компанії!</h3>
+            <p>Ви заробили 100 000 гривень! Є чим пишатися!</p>
+            <div class="close">Найс</div>
+        </div>
+        <div class="message event">
+            <h3 class="title">title</h3>
+            <p class="text">text</p>
+            <div class="close">Найс</div>
+        </div>
+    </div>
+    <script defer src="./js/script.js"></script>
+</body>
