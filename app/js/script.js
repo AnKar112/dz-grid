@@ -1,10 +1,11 @@
-let currentMoney = 60
+let currentMoney = 60;
 let moneyPerContract = 0
 let moneyPerSec = 0
 let totalEarnedMoney = 0
 let moneyPerSecMultiple = 1
 let isInitial
 let lvl = 1
+let randomEvent = 0
 
 let overlayMessage = document.querySelectorAll('.overlay.message-popup .message')
 
@@ -117,6 +118,56 @@ class powerUp {
                         factor: -15000
                 })
             }
+
+            if (moneyPerContract > 60 && randomEvent == 0) {
+                events.push({
+                    title: 'Бан на апворк',
+                    text: 'Один з ваших акаунтів забанили на апворці. Ви втрачаєте 2000 гривень.',
+                    buttonText: 'От падло',
+                    operation: 'plus',
+                    factor: -2000
+                }, 
+                {
+                    title: 'Потоп!',
+                    text: 'Ви залили офіс пид вашим. Усі гроші довелося віддати на збитки.',
+                    buttonText: 'От падло',
+                    operation: 'multiple',
+                    factor: 0
+                })
+                randomEvent = randomEvent + 2
+            } else if (moneyPerContract > 100 && randomEvent == 2) {
+                events.push({
+                    title: 'Підступна секта',
+                    text: 'Ваш офіс менеджер вступив у секту і втік, перед цим вкрав у вас 5000 гривень.',
+                    buttonText: 'От падло',
+                    operation: 'plus',
+                    factor: -5000
+                }, 
+                {
+                    title: 'Налогова!',
+                    text: 'Виявилося, що ви вхилялися від налогів. Штраф 5000 гривень.',
+                    buttonText: 'От падло',
+                    operation: 'plus',
+                    factor: 5000
+                })
+                randomEvent = randomEvent + 2
+            } else if (moneyPerContract > 150 && randomEvent == 4) {
+                events.push({
+                    title: 'Призив',
+                    text: 'Пів офісу пішло до армії. Довелося виплатити одразу усі відпусткові, 7000 гривень.',
+                    buttonText: 'А працювати кто буде?',
+                    operation: 'plus',
+                    factor: -7000
+                }, 
+                {
+                    title: 'Притула збирає на байрактари',
+                    text: 'Вам захотілося віддати на донати усі гроші.',
+                    buttonText: 'От падло',
+                    operation: 'multiple',
+                    factor: 0
+                })
+                randomEvent = randomEvent + 2
+            }
         }
     }
 }
@@ -140,7 +191,7 @@ class bonus {
                 // increase powerup amount
                 let obj = document.querySelector('[data-powerup="' + this.name + '"]')
                 this.amount = ++this.amount
-                obj.querySelector('.amount span').innerHTML = this.amount
+                obj.querySelector('.amount span').innerHTML = this.amount + "(макс.)"
 
                 if (this.name == 'udemy') {
                     // change junior money per contract 
@@ -195,6 +246,7 @@ class bonus {
                 if (this.name == 'relocate') { 
                     document.querySelector('.overlay.message-popup').classList.remove('disable')
                     document.querySelector('.overlay.message-popup .capital').classList.add('active')
+                    document.body.classList.add('capital')
                 }
 
             } else {
@@ -211,13 +263,13 @@ class bonus {
 let junior = new powerUp('junior', 60, 1, 0, 0)
 let designer = new powerUp('designer', 300, 2, 1, 0)
 let middle = new powerUp('middle', 600, 3, 2, 0)
-let senior = new powerUp('senior', 2000, 7, 4, 0)
-let fullstack = new powerUp('fullstack', 5000, 15, 6, 0)
+let senior = new powerUp('senior', 2000, 6, 3, 0)
+let fullstack = new powerUp('fullstack', 5000, 10, 5, 0)
 // name, cost amount, bonus, maximum 
-let udemy = new bonus('udemy', 1000, 0, 2, 1)
-let cofe = new bonus('cofe', 5000, 0, 1, 1)
-let relax = new bonus('relax', 5000, 0, 2, 1)
-let shawerma = new bonus('shawerma', 10000, 0, 0.5, 1)
+let udemy = new bonus('udemy', 2000, 0, 2, 1)
+let cofe = new bonus('cofe', 6000, 0, 1, 1)
+let relax = new bonus('relax', 6000, 0, 2, 1)
+let shawerma = new bonus('shawerma', 12000, 0, 0.5, 1)
 let relocate = new bonus('relocate', 30000, 0, 0, 1)
 
 
@@ -238,6 +290,7 @@ takeContractButton.onclick = () => {
     // increase total earned money 
     totalEarnedMoney = totalEarnedMoney + moneyPerContract
     document.querySelector('.totalEarnedMoney span').innerHTML = totalEarnedMoney
+
 }
 
 function eventPerSec() {
@@ -330,7 +383,7 @@ let events = [
         text: 'Що поробиш, дружня атмосфера це важливо. Дружня атмосфера коштувала вам 200 гривень.',
         buttonText: 'Ще заробимо',
         operation: 'plus',
-        factor: -200
+        factor: -300
     },
     {
         title: 'Шабашка',
@@ -341,10 +394,10 @@ let events = [
     },
     {
         title: 'Оплата хостингу',
-        text: 'Що поробиш, штука потрібна. Усього 200 гривень.',
+        text: 'Що поробиш, штука потрібна. Усього 400 гривень.',
         buttonText: 'Ще заробимо',
         operation: 'plus',
-        factor: -200
+        factor: -400
     },
     {
         title: 'Кіднепінг',

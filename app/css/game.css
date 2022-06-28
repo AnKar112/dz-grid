@@ -61,6 +61,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.2em;
+  position: relative;
   --primary-color: #bde7fd;
   --secondary-color: #fffbc6;
   --message-color: #FFB2A6;
@@ -69,6 +70,23 @@ body {
   --lvl2-color: #d26dfa;
   --lvl3-color: #fd429f;
   --lvl4-color: #96212b; }
+  @media (max-width: 1024px) {
+    body {
+      font-size: 12px; } }
+  @media (max-width: 769px) {
+    body {
+      font-size: 9px; } }
+
+body.capital::after {
+  content: '';
+  position: relative;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  background: url("../img/capital.svg.png");
+  background-size: cover;
+  width: 80px;
+  height: 105px; }
 
 span {
   font-weight: 700;
@@ -78,6 +96,9 @@ span {
   max-width: 1530px;
   padding: 0 40px;
   margin: 0 auto; }
+  @media (max-width: 1024px) {
+    .wrapper {
+      padding: 0 20px; } }
 
 header {
   background: var(--primary-color);
@@ -96,6 +117,9 @@ header {
       font-size: 24px;
       line-height: 1.2em;
       margin-right: 4px; }
+      @media (max-width: 1024px) {
+        header .title-wrap .title {
+          font-size: 20px; } }
     header .title-wrap .info-icon {
       cursor: pointer;
       height: 16px;
@@ -126,9 +150,15 @@ header {
   header .currentMoney, header .totalEarnedMoney {
     font-size: 16px;
     text-align: center; }
+    @media (max-width: 1024px) {
+      header .currentMoney, header .totalEarnedMoney {
+        font-size: 14px; } }
 
 main {
-  padding: 30px; }
+  padding: 40px 0; }
+  @media (max-width: 1024px) {
+    main {
+      padding: 20px 0; } }
   main .button {
     user-select: none;
     display: flex;
@@ -205,6 +235,10 @@ main {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
     position: relative; }
+    @media (max-width: 1024px) {
+      main .powerup {
+        column-gap: 10px;
+        margin: 10px 0; } }
     main .powerup .card {
       user-select: none;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
@@ -250,6 +284,9 @@ main {
       font-size: 20px;
       line-height: 1.2em;
       margin-right: 4px; }
+      @media (max-width: 1024px) {
+        main .title-block .title {
+          font-size: 18px; } }
     main .title-block .info-icon {
       cursor: pointer;
       height: 16px;
@@ -307,6 +344,10 @@ main {
       font-weight: 700;
       text-align: center;
       margin-bottom: 40px; }
+      @media (max-width: 1024px) {
+        .overlay .message h3 {
+          margin-bottom: 20px;
+          font-size: 20px; } }
     .overlay .message .close {
       padding: 10px 20px;
       cursor: pointer;
