@@ -29,6 +29,7 @@ class powerUp {
             // disable welcome message 
             if (isInitial) {
                 isInitial = false
+                setInterval(eventPerSec, 1000)
                 document.querySelectorAll('.welcome').forEach(item => item.classList.add('disable'))
             }
 
@@ -104,7 +105,7 @@ class powerUp {
             } else if (this.name == 'fullstack' && this.amount == 3) {
                 events.push({
                         title: 'Фулстаки перелаялися',
-                        text: 'Ідейні розбужності дали про себе знати. На відновлення їх психічного стану (спа, відпустки, піздюлі) пішли 10 000 гривень.',
+                        text: 'Ідейні розбіжності дали про себе знати. На відновлення їх психічного стану (спа, відпустки, піздюлі) пішли 10 000 гривень.',
                         buttonText: 'От нездари',
                         operation: 'plus',
                         factor: -10000
@@ -113,7 +114,7 @@ class powerUp {
                 events.push({
                         title: 'Фулстаки взламали сайт ФСБ',
                         text: 'Грант від Зеленського - 15 000 гривень.',
-                        buttonText: 'От нездари',
+                        buttonText: 'Красені',
                         operation: 'plus',
                         factor: -15000
                 })
@@ -129,7 +130,7 @@ class powerUp {
                 }, 
                 {
                     title: 'Потоп!',
-                    text: 'Ви залили офіс пид вашим. Усі гроші довелося віддати на збитки.',
+                    text: 'Ви залили офіс під вашим. Усі гроші довелося віддати на збитки.',
                     buttonText: 'От падло',
                     operation: 'multiple',
                     factor: 0
@@ -144,8 +145,8 @@ class powerUp {
                     factor: -5000
                 }, 
                 {
-                    title: 'Налогова!',
-                    text: 'Виявилося, що ви вхилялися від налогів. Штраф 5000 гривень.',
+                    title: 'Податкова!',
+                    text: 'Виявилося, що ви вхилялися від податків. Штраф 5000 гривень.',
                     buttonText: 'От падло',
                     operation: 'plus',
                     factor: 5000
@@ -352,7 +353,7 @@ function eventPerMin() {
 let events = [
     {
         title: 'Чудова робота!',
-        text: 'Один з заказників настільки задоволений роботою, що заплатив на 100 гривень більше.',
+        text: 'Один з замовників настільки задоволений роботою, що заплатив на 100 гривень більше.',
         buttonText: 'Найс',
         operation: 'plus',
         factor: 100
@@ -366,7 +367,7 @@ let events = [
     }, 
     {
         title: 'Рефанд!',
-        text: 'Заказник незадоволений вашою работою, 300 гривень пішло на рефанд.',
+        text: 'Замовник незадоволений вашою работою, 300 гривень пішло на рефанд.',
         buttonText: 'Що за невдача',
         operation: 'plus',
         factor: -300
@@ -422,6 +423,3 @@ let events = [
     }
 ]
 
-
-
-setInterval(eventPerSec, 1000)
